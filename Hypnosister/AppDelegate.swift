@@ -18,11 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let firstView = HypnosisView(frame: window!.bounds)
-        window!.addSubview(firstView)
+        //Create CGRects for frames
+        var screenRect = window!.bounds
+        var bigRect = screenRect
+        bigRect.size.width *= 2.0
+        bigRect.size.height *= 2.0
+        
+        // Create a screen-sized scroll view and add it to the window
+        let scrollView = UIScrollView(frame: screenRect)
+        window!.addSubview(scrollView)
+        
+        // Create a super-sized hypnosis view and add it to the scroll view
+        let hypnosisView = HypnosisView(frame: bigRect)
+        scrollView.addSubview(hypnosisView)
+        
+        //Tel the scroll view how big its content area is
+        scrollView.contentSize = bigRect.size
+        
+        
+        //let firstView = HypnosisView(frame: window!.bounds)
+        //window!.addSubview(firstView)
         
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
+        
+        
         
         return true
     }
