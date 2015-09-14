@@ -9,10 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
 
     var window: UIWindow?
+    var miniMap: MiniMapView?
 
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        miniMap?.updateWithScrollView(scrollView)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create a screen-sized scroll view and add it to the window
         let scrollView = UIScrollView(frame: screenRect)
+        scrollView.delegate = self
         window!.addSubview(scrollView)
         
         // Create a super-sized hypnosis view and add it to the scroll view
@@ -35,15 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Tel the scroll view how big its content area is
         scrollView.contentSize = bigRect.size
         
+        let miniMap = MiniMapView(frame: CGRect(x: 10, y: 30, width: 75, height: 135))
+        window!.addSubview(miniMap)
+        miniMap.updateWithScrollView(scrollView)
+        self.miniMap = miniMap
+        
         
         //let firstView = HypnosisView(frame: window!.bounds)
         //window!.addSubview(firstView)
         
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
-        
-        
-        
+ 
         return true
     }
 

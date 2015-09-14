@@ -12,6 +12,7 @@
 		4C5E33481BA764CA006344F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5E33461BA764CA006344F5 /* LaunchScreen.xib */; };
 		4C5E33541BA764CA006344F5 /* HypnosisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E33531BA764CA006344F5 /* HypnosisterTests.swift */; };
 		4C5E335E1BA76572006344F5 /* HypnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E335D1BA76572006344F5 /* HypnosisView.swift */; };
+		4C5E336C1BA78ABE006344F5 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		4C5E33521BA764CA006344F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5E33531BA764CA006344F5 /* HypnosisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnosisterTests.swift; sourceTree = "<group>"; };
 		4C5E335D1BA76572006344F5 /* HypnosisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HypnosisView.swift; sourceTree = "<group>"; };
+		4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		4C5E332F1BA764CA006344F5 = {
 			isa = PBXGroup;
 			children = (
+				4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */,
 				4C5E333A1BA764CA006344F5 /* Hypnosister */,
 				4C5E33501BA764CA006344F5 /* HypnosisterTests */,
 				4C5E33391BA764CA006344F5 /* Products */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5E336C1BA78ABE006344F5 /* MiniMapView.swift in Sources */,
 				4C5E333E1BA764CA006344F5 /* AppDelegate.swift in Sources */,
 				4C5E335E1BA76572006344F5 /* HypnosisView.swift in Sources */,
 			);
@@ -397,6 +401,7 @@
 				4C5E33591BA764CA006344F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C5E335A1BA764CA006344F5 /* Build configuration list for PBXNativeTarget "HypnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +410,7 @@
 				4C5E335C1BA764CA006344F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
