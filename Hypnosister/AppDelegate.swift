@@ -13,9 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
 
     var window: UIWindow?
     var miniMap: MiniMapView?
+    var hypnosisView: HypnosisView?
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         miniMap?.updateWithScrollView(scrollView)
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return hypnosisView
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -26,16 +31,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         var screenRect = window!.bounds
         var bigRect = screenRect
         bigRect.size.width *= 2.0
-        bigRect.size.height *= 2.0
         
         // Create a screen-sized scroll view and add it to the window
         let scrollView = UIScrollView(frame: screenRect)
+        scrollView.pagingEnabled = true
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 2.0
         scrollView.delegate = self
         window!.addSubview(scrollView)
         
         // Create a super-sized hypnosis view and add it to the scroll view
-        let hypnosisView = HypnosisView(frame: bigRect)
+        let hypnosisView = HypnosisView(frame: screenRect)
+        self.hypnosisView = hypnosisView
         scrollView.addSubview(hypnosisView)
+        
+        screenRect.origin.x += screenRect.size.width
+        let anotherView = HypnosisView(frame: screenRect)
+        scrollView.addSubview(anotherView)
+        
+        
         
         //Tel the scroll view how big its content area is
         scrollView.contentSize = bigRect.size
