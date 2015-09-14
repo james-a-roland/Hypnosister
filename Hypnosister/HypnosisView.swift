@@ -10,7 +10,11 @@ import UIKit
 
 class HypnosisView : UIView {
     
-    var radiusOffset: CGFloat = 0
+    var radiusOffset: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     var timer: NSTimer?
     
     override init(frame: CGRect) {
@@ -31,7 +35,7 @@ class HypnosisView : UIView {
         for var radius: CGFloat = 0.0; radius < maxRadius; radius += 20 {
             
             let path = UIBezierPath()
-            path.addArcWithCenter(center, radius: radius, startAngle: 0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+            path.addArcWithCenter(center, radius: radius+radiusOffset, startAngle: 0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
             path.lineWidth = 10
             
             let alpha = ((radius + radiusOffset - 10) / maxRadius)
