@@ -10,6 +10,9 @@ import UIKit
 
 class HypnosisView : UIView {
     
+    var radiusOffset: CGFloat = 0
+    var timer: NSTimer?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.clearColor()
@@ -30,9 +33,32 @@ class HypnosisView : UIView {
             let path = UIBezierPath()
             path.addArcWithCenter(center, radius: radius, startAngle: 0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
             path.lineWidth = 10
-            UIColor.purpleColor().setStroke()
+            
+            let alpha = ((radius + radiusOffset - 10) / maxRadius)
+            UIColor.purpleColor().colorWithAlphaComponent(alpha).setStroke()
             
             path.stroke()
+        }
+    }
+    
+    override func didMoveToSuperview() {
+        if superview != nil {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0/30.0, target: self, selector: "timerFired:", userInfo: nil, repeats: true)
+        }
+    }
+    
+    override func removeFromSuperview() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func timerFired(timer: NSTimer) {
+        println("pew")
+        
+        radiusOffset += 1.0
+        
+        if radiusOffset > 20 {
+            radiusOffset = 0
         }
     }
 }
