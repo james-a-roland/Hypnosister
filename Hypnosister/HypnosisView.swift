@@ -43,6 +43,13 @@ class HypnosisView : UIView {
             
             path.stroke()
         }
+        
+        //Draw an image on top of the concentric circles
+        let image = UIImage(named: "logo.png")
+        let imageWid = CGFloat(50)
+        let imageHgt = CGFloat(50)
+        let imageRect = CGRect(x: center.x - imageWid/2, y: center.y - imageHgt/2, width: imageWid, height: imageHgt)
+        image?.drawInRect(imageRect)
     }
     
     override func didMoveToSuperview() {
