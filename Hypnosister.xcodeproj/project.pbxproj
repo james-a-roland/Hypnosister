@@ -13,6 +13,10 @@
 		4C5E33541BA764CA006344F5 /* HypnosisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E33531BA764CA006344F5 /* HypnosisterTests.swift */; };
 		4C5E335E1BA76572006344F5 /* HypnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E335D1BA76572006344F5 /* HypnosisView.swift */; };
 		4C5E336C1BA78ABE006344F5 /* MiniMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */; };
+		4C5E33701BA796AE006344F5 /* HypnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E336F1BA796AE006344F5 /* HypnosisViewController.swift */; };
+		4CFE3EB41BA880A500157016 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE3EB31BA880A500157016 /* ReminderViewController.swift */; };
+		4CFE3EB61BA8812800157016 /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE3EB51BA8812800157016 /* ReminderViewController.xib */; };
+		4CFE3EB81BA8849100157016 /* 00 - Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE3EB71BA8849100157016 /* 00 - Resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,11 @@
 		4C5E33521BA764CA006344F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5E33531BA764CA006344F5 /* HypnosisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnosisterTests.swift; sourceTree = "<group>"; };
 		4C5E335D1BA76572006344F5 /* HypnosisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HypnosisView.swift; sourceTree = "<group>"; };
-		4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniMapView.swift; sourceTree = "<group>"; };
+		4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiniMapView.swift; path = ../MiniMapView.swift; sourceTree = "<group>"; };
+		4C5E336F1BA796AE006344F5 /* HypnosisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HypnosisViewController.swift; path = ../HypnosisViewController.swift; sourceTree = "<group>"; };
+		4CFE3EB31BA880A500157016 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderViewController.swift; path = ../ReminderViewController.swift; sourceTree = "<group>"; };
+		4CFE3EB51BA8812800157016 /* ReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReminderViewController.xib; path = ../ReminderViewController.xib; sourceTree = "<group>"; };
+		4CFE3EB71BA8849100157016 /* 00 - Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "00 - Resources"; path = "../../00 - Resources"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +67,6 @@
 		4C5E332F1BA764CA006344F5 = {
 			isa = PBXGroup;
 			children = (
-				4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */,
 				4C5E333A1BA764CA006344F5 /* Hypnosister */,
 				4C5E33501BA764CA006344F5 /* HypnosisterTests */,
 				4C5E33391BA764CA006344F5 /* Products */,
@@ -78,6 +85,11 @@
 		4C5E333A1BA764CA006344F5 /* Hypnosister */ = {
 			isa = PBXGroup;
 			children = (
+				4CFE3EB71BA8849100157016 /* 00 - Resources */,
+				4C5E336B1BA78ABE006344F5 /* MiniMapView.swift */,
+				4CFE3EB31BA880A500157016 /* ReminderViewController.swift */,
+				4CFE3EB51BA8812800157016 /* ReminderViewController.xib */,
+				4C5E336F1BA796AE006344F5 /* HypnosisViewController.swift */,
 				4C5E333D1BA764CA006344F5 /* AppDelegate.swift */,
 				4C5E335D1BA76572006344F5 /* HypnosisView.swift */,
 				4C5E33441BA764CA006344F5 /* Images.xcassets */,
@@ -193,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5E33481BA764CA006344F5 /* LaunchScreen.xib in Resources */,
+				4CFE3EB61BA8812800157016 /* ReminderViewController.xib in Resources */,
+				4CFE3EB81BA8849100157016 /* 00 - Resources in Resources */,
 				4C5E33451BA764CA006344F5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +227,9 @@
 			files = (
 				4C5E336C1BA78ABE006344F5 /* MiniMapView.swift in Sources */,
 				4C5E333E1BA764CA006344F5 /* AppDelegate.swift in Sources */,
+				4CFE3EB41BA880A500157016 /* ReminderViewController.swift in Sources */,
 				4C5E335E1BA76572006344F5 /* HypnosisView.swift in Sources */,
+				4C5E33701BA796AE006344F5 /* HypnosisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,8 +57,6 @@ class HypnosisView : UIView {
     }
     
     func timerFired(timer: NSTimer) {
-        println("pew")
-        
         radiusOffset += 1.0
         
         if radiusOffset > 20 {
