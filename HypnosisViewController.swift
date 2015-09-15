@@ -10,6 +10,8 @@ import UIKit
 
 class HypnosisViewController: UIViewController {
     
+    weak var textLabel : UILabel!
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         tabBarItem.title = "Hypnotize"
@@ -23,8 +25,16 @@ class HypnosisViewController: UIViewController {
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
         let backgroundView = HypnosisView(frame: frame)
-        
         view = backgroundView
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        label.center = view.center
+        label.font = UIFont.systemFontOfSize(24)
+        label.textAlignment = .Center
+        label.text = "Achieve\nNerdvana"
+        label.numberOfLines = 2
+        view.addSubview(label)
+        textLabel = label
     }
     
     override func viewDidLoad() {

@@ -54,6 +54,7 @@ class HypnosisView : UIView {
     override func removeFromSuperview() {
         timer?.invalidate()
         timer = nil
+        super.removeFromSuperview()
     }
     
     func timerFired(timer: NSTimer) {
