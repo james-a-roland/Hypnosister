@@ -14,6 +14,11 @@ class ReminderViewController: UIViewController {
     @IBAction func addReminder(sender: AnyObject) {
         let date = datePicker.date
         println("setting a reminder for \(date)")
+        
+        let note = UILocalNotification()
+        note.alertBody = "Hypnotize me"
+        note.fireDate = date
+        UIApplication.sharedApplication().scheduleLocalNotification(note)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -28,5 +33,16 @@ class ReminderViewController: UIViewController {
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+    // Always call the super implementation of viewDidLoad
+    super.viewDidLoad()
+    println("ReminderViewController loaded its view.")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
+            datePicker.minimumDate = NSDate(timeIntervalSinceNow: 60)
     }
 }

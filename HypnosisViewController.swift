@@ -26,4 +26,10 @@ class HypnosisViewController: UIViewController {
         
         view = backgroundView
     }
+    
+    override func viewDidLoad() {
+        // Always call the super implementation of viewDidLoad
+        super.viewDidLoad()
+        println("HypnosisViewController loaded its view.")
+    }
 }

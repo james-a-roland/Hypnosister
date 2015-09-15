@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
         //Instantiate view controllers.
         let hvc = HypnosisViewController()
         let rvc = ReminderViewController()
