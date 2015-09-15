@@ -42,4 +42,43 @@ class HypnosisViewController: UIViewController {
         super.viewDidLoad()
         println("HypnosisViewController loaded its view.")
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        UIView.animateWithDuration(1.0, delay: 0.0, options: .CurveEaseIn, animations: {
+//            self.textLabel.alpha = 1.0
+//            },
+//            completion: nil)
+        UIView.animateKeyframesWithDuration(2.0, delay: 0.0, options: nil, animations: { () -> Void in
+        
+        self.textLabel.alpha = 1
+        let thirdOfARotation = CGFloat(2.0 * M_PI / 3.0)
+        
+        UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/3, animations: { () -> Void in
+            let angle = 1.0 * thirdOfARotation
+            self.textLabel.transform = CGAffineTransformMakeRotation(angle)
+            })
+        
+        UIView.addKeyframeWithRelativeStartTime(1.0/3.0,
+            relativeDuration: 1.0/3.0,
+            animations: {
+            let angle = 2.0 * thirdOfARotation
+            self.textLabel.transform = CGAffineTransformMakeRotation(angle)
+            })
+        
+        UIView.addKeyframeWithRelativeStartTime(1.0/3.0,
+            relativeDuration: 1.0/3.0,
+            animations: {
+            let angle = 3.0 * thirdOfARotation
+            self.textLabel.transform = CGAffineTransformMakeRotation(angle)
+            })
+        
+        }, completion: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
+            textLabel.alpha = 0
+    }
 }
